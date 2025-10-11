@@ -203,6 +203,8 @@ const App = () => {
         return (
           <div className="content-area">
             <h2>Matrículas Registradas ({matriculas.length})</h2>
+            {loading && <p>Cargando matrículas desde el servidor...</p>}
+            {error && <p className="error-message">{error}</p>}
             {matriculas.length === 0 ? (
               <p>No hay matrículas registradas aún.</p>
             ) : (
