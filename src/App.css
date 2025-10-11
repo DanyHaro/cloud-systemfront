@@ -1,0 +1,179 @@
+/* Estilos Generales */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+  background-color: #004a99; /* Azul institucional, un ejemplo */
+  color: white;
+  padding: 15px 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* -------------------- LAYOUT PRINCIPAL -------------------- */
+.main-content-wrapper {
+  display: flex;
+  flex: 1; /* Ocupa el espacio restante después del navbar */
+}
+
+/* -------------------- SIDEBAR -------------------- */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #ddd;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-left: 5px solid transparent;
+  transition: all 0.2s;
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar li:hover {
+  background-color: #e6e6e6;
+  border-left-color: #004a99;
+}
+
+.sidebar li.active {
+  background-color: #e0f7fa; /* Fondo suave para la opción activa */
+  border-left-color: #004a99;
+  color: #004a99;
+  font-weight: bold;
+}
+
+/* -------------------- CONTENIDO PRINCIPAL -------------------- */
+.content-container {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+}
+
+.content-area {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------- FORMULARIO DE MATRÍCULA -------------------- */
+.matricula-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px; /* Limita el ancho del formulario */
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.matricula-form input[type='text'],
+.matricula-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+}
+
+.matricula-form select {
+  /* Para que el select se vea mejor en algunos navegadores */
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23666' d='M9.293 12.95l.707.707L15 9.707l-1.414-1.414L10 11.586 6.414 8.172 5 9.586z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 12px;
+}
+
+.submit-button {
+  background-color: #28a745; /* Color verde para el botón de acción */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/*MATRICULAS REGISTRADAS*/
+.table-container {
+    overflow-x: auto; /* Permite desplazamiento horizontal si la tabla es ancha */
+    margin-top: 15px;
+}
+
+.matriculas-table {
+  width: 100%;
+  border-collapse: collapse; /* Bordes de celda únicos */
+  background-color: #fff;
+}
+
+.matriculas-table th,
+.matriculas-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.matriculas-table th {
+  background-color: #f2f2f2; /* Fondo para encabezados */
+  color: #333;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.matriculas-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Raya las filas para mejor legibilidad */
+}
+
+.matriculas-table tr:hover {
+  background-color: #eaf6ff; /* Resalta la fila al pasar el mouse */
+}
+
+/* Ajustes de columnas específicas */
+.matriculas-table td:nth-child(1) { /* ID */
+  width: 50px;
+  text-align: center;
+}
+
+.matriculas-table td:nth-child(3) { /* Código */
+  width: 120px;
+}
