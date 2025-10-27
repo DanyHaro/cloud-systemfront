@@ -13,7 +13,8 @@ const App = () => {
   const fetchMatriculas = async () => {
     try {
       // Petición a la URL de tu backend
-      const response = await axios.get("http://localhost:3000/matricula/");
+      // const response = await axios.get("http://localhost:3000/matricula/");
+      const response = await axios.get("http://54.145.248.126:3000/matricula/");
 
       setMatriculas(response.data); // Asume que el backend devuelve un array en response.data
       setError(null);
@@ -66,7 +67,8 @@ const App = () => {
         curso: formData.cursos, // Asumo que el backend espera 'curso' en singular
     };
     try {
-      const response = await axios.post("http://localhost:3000/matricula/",dataToSend)
+      // const response = await axios.post("http://localhost:3000/matricula/",dataToSend)
+      const response = await axios.post("http://54.145.248.126:3000/matricula/",dataToSend)
       console.log('Matrícula creada:', response.data);
       alert(`Matrícula de ${formData.nombres} ${formData.apellidos} registrada con éxito.`);
       await fetchMatriculas();
